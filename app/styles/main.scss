@@ -2,6 +2,9 @@ $icon-font-path: '../fonts/';
 
 // bower:scss
 @import "bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/material-shadows/material-shadows.scss";
+@import "custom-variables.scss";
+@import "animations.scss";
 // endbower
 
 .browserupgrade {
@@ -11,83 +14,164 @@ $icon-font-path: '../fonts/';
   padding: 0.2em 0;
 }
 
-/* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+body, html{
+	position: relative;
+	height: 100%;
+	font-size: $font-size-base;
+	font-family: $font-family-sans-serif;
+	font-weight: 400;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+.container-fluid{
+	@media screen and (min-width: $grid-float-breakpoint){
+		height: 100%;
+	}
+
+	> .row{
+
+		@media screen and (min-width: $grid-float-breakpoint){
+			height: 35%;
+		}
+
+		&:first-child{
+			@media screen and (min-width: $grid-float-breakpoint){
+				height: 65%;
+			}
+		}
+	}
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
+section{
+	position: relative;
 
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
+	&::before, &::after{
+		position: absolute;
+		content: '';
+		pointer-events: none;
+	}
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+h1{
+	position: absolute;
+	top: 25%;
+	// Acts weird with animation
+	// transform: translateY(-50%);
+	font-family: $font-family-serif;
+	font-size: 4vw;
+	color: lighten($brand-secondary, 25%);
+	animation: fadein 3s ease;
+	// transform-origin: left top;
+
+	span{
+		color: #FFFFFF;
+	}
+
+	small{
+		display: block;
+		line-height: 2;
+		font-family: $font-family-sans-serif;
+		color: lighten($brand-secondary, 10%);
+	}
 }
 
-.container-narrow > hr {
-  margin: 30px 0;
+a{
+	font-weight: 600;
+	color: inherit;
+	outline: none;
+	text-decoration: none;
+	position: relative;
+	display: inline-block;
+	// text-transform: uppercase;
+	overflow: hidden;
+	line-height: 1;
+	vertical-align: text-bottom;
+
+	&:hover,
+	&:active,
+	&:focus{
+		text-decoration: none;
+		color: inherit;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		height: .2em;
+		width: 100%;
+		top: 50%;
+		margin-top: -.1em;
+		right: 0;
+		background: $brand-primary;
+		transform: translate3d(-100%,0,0);
+		transition: transform 0.4s;
+		transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+	}
+
+	&:hover::after {
+		transform: translate3d(100%,0,0);
+	}
+
+	&::before {
+		content: attr(data-letters);
+		position: absolute;
+		z-index: 2;
+		overflow: hidden;
+		color: #FFF;
+		white-space: nowrap;
+		width: 0%;
+		transition: width 0.4s 0.3s;
+	}
+
+	&:hover::before {
+		width: 100%;
+	}
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
+.half-upper,
+.half-lower{
+	// overflow: hidden;
+	height: 100%;
+	padding: 0 60px;
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-  p + h4 {
-    margin-top: 28px;
-  }
+.half-upper{
+	overflow: hidden;
+	background:transparent url('../images/tile-pattern.png');
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
+.half-lower {
+	z-index: 1;
+	background: $brand-primary;
+	color: rgba(#FFF, .75);
+	padding-top: 30px;
 
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
+	&::before,
+	&::after{
+		top: 0;
+		left: -25%;
+		z-index: -1;
+		width: 150%;
+		height: 75%;
+		background: inherit;
+		transform: rotate(-2deg);
+		transform-origin: 0 0;
+	}
 
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
+	&::before{
+		height: 50%;
+		background: rgba(darken($brand-primary, 15%), .75);
+		transform: rotate(-3deg);
+		transform-origin: 3% 0;
+		animation: waves 10s ease-in-out alternate infinite;
+		// box-shadow: 0 -5px 10px rgba(darken($brand-primary, 25%), .5);
+	}
 
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+	&::after{
+		animation: waves2 12s ease-in-out alternate infinite;
+		// box-shadow: 0 -15px 20px rgba(darken($brand-primary, 25%), .5);
+	}
+
+	p{
+		animation: fadein 3s ease;
+	}
 }

@@ -1,0 +1,43 @@
+@keyframes waves{
+	0%, 50%, 100% {
+		transform: rotate(-3deg);
+		box-shadow: 0 -5px 10px rgba(darken($brand-primary, 25%), .5);
+	}
+
+	25% {
+		transform: rotate(-3.1deg);
+		box-shadow: 0 -4px 8px rgba(darken($brand-primary, 25%), .5);
+	}
+
+	75% {
+		transform: rotate(-3.2deg);
+		box-shadow: 0 -2px 5px rgba(darken($brand-primary, 25%), .5);
+	}
+}
+
+@keyframes waves2{
+	0%, 50%, 100% {
+		transform: rotate(-2deg);
+		box-shadow: 0 -15px 20px rgba(darken($brand-primary, 25%), .5);
+	}
+
+	25% {
+		transform: rotate(-2.1deg);
+		box-shadow: 0 -12px 17px rgba(darken($brand-primary, 25%), .5);
+	}
+
+	75% {
+		transform: rotate(-2.2deg);
+		box-shadow: 0 -10px 12px rgba(darken($brand-primary, 25%), .5);
+	}
+}
+
+@keyframes fadein{
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
