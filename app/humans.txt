@@ -1,0 +1,29 @@
+/* TEAM */
+
+Author: Serban Carjan
+Site: serban.carjan+dotro [at] gmail.com
+Twitter: @SerbanCarjan
+Linkedin: /serbancarjan
+GitHub: /SerbanC
+Location: Bucharest, Romania
+
+
+/* THANKS */
+
+Social Icons: Alessio Atzeni, Icomoon
+Site: http://www.flaticon.com
+License: CC BY 3.0
+
+Separator Styles: Mary Lou
+Site: http://tympanus.net/codrops/2013/10/03/a-collection-of-separator-styles/
+
+Hover Effect: Mary Lou
+Site: http://tympanus.net/codrops/2015/05/13/inspiration-for-text-styles-and-hover-effects/
+
+
+/* SITE */
+
+Last update: 2015/05/29
+Standards: HTML5, CSS3, JQ 2.1.4
+Components: Modernizr, jQuery, Bootstrap, SASS, Google Fonts, Icomoon
+Software: Sublime Text 3, SourceTree
