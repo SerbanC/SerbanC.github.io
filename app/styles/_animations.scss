@@ -42,12 +42,12 @@
 	}
 }
 
-@keyframes perspective-rotate-and-brighten {
+@keyframes slight_rotate {
 	0% {
-		fill: darken($brand-primary, 15%);
+		transform: rotate(2deg);
 	}
 
 	100% {
-		fill: #FFF;
+		transform: rotate(0);
 	}
 }
