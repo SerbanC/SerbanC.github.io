@@ -12,4 +12,4 @@ For now I removed all JS libraries, plugins and modules, cause I'm not using any
 **TODO:**
 * get rid of Bootstrap;
 * maybe streamline the gulpfile to clean all the unused stuff, learn more Gulp than just running tasks in the process;
-* add a photo? perhaps;
+* add a photo? perhaps.
