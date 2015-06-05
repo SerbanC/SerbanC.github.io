@@ -15,9 +15,13 @@ $icon-font-path: '../fonts/';
 }
 
 body, html{
+	position: relative;
+	height: 100%;
+	background-color: #F6F6F6;
 	font-size: $font-size-base;
 	font-family: $font-family-sans-serif;
 	font-weight: 400;
+	overflow-x: hidden;
 }
 
 section{
@@ -31,27 +35,41 @@ section{
 }
 
 h1{
-	position: absolute;
-	top: 25%;
+	font-size: 2.4rem;
 	font-family: $font-family-sans-serif;
-	font-size: 3.6rem;
 	color: #FFF;
 	opacity: 0;
 	animation: fadein 3s ease;
 	animation-fill-mode: forwards;
 
+	@media (min-width: $grid-float-breakpoint) {
+		position: absolute;
+		top: 25%;
+		font-size: 3.6rem;
+	}
+
 	em{
 		font-style: normal;
 		font-family: $font-family-serif;
-		font-size: 6rem;
+		font-size: 3.6rem;
+
+		@media (min-width: $grid-float-breakpoint) {
+			font-size: 6rem;
+		}
 	}
 
 	small{
-		font-size: 3.6rem;
+		font-size: 2.4rem;
 		display: block;
-		line-height: 2;
+		line-height: 1.25;
+		margin-top: 3rem;
 		font-family: $font-family-sans-serif;
 		color: lighten($brand-primary, 10%);
+
+		@media (min-width: $grid-float-breakpoint) {
+			font-size: 3.6rem;
+			margin-top: 0;
+		}
 	}
 }
 
@@ -109,21 +127,31 @@ h1{
 
 .half-upper,
 .half-lower{
-	padding: 0 60px;
+	padding: 5rem 3rem;
+
+	@media (min-width: $grid-float-breakpoint) {
+		padding: 0 6rem;
+	}
 }
 
 .half-upper{
 	overflow: hidden;
 	background:transparent url('../images/tile-pattern.png');
-	height: 65vh;
+
+	@media (min-width: $grid-float-breakpoint) {
+		height: 65vh;
+	}
 }
 
 .half-lower {
 	z-index: 1;
-	height: 35vh;
 	background: #F6F6F6;
 	color: lighten($text-color, 15%);
 	padding-top: 30px;
+
+	@media (min-width: $grid-float-breakpoint) {
+		height: 35vh;
+	}
 
 	&::before,
 	&::after{
@@ -144,19 +172,31 @@ h1{
 		transform: rotate(-3deg);
 		transform-origin: 3% 0;
 		animation: waves 10s ease-in-out alternate infinite, gradient_wave 30s ease infinite;
+
+		@media (min-width: $screen-sm-min) {
+			animation: waves_screen 10s ease-in-out alternate infinite, gradient_wave 30s ease infinite;
+		}
 	}
 
 	&::after{
-		animation: waves2 12s ease-in-out alternate infinite;
+		animation: waves_two 12s ease-in-out alternate infinite;
+
+		@media (min-width: $screen-sm-min) {
+			animation: waves_two_screen 12s ease-in-out alternate infinite, gradient_wave 30s ease infinite;
+		}
 	}
 
 	p{
-		font-size: 2.4rem;
+		font-size: 2rem;
 		max-width: 800px;
 		opacity: 0;
 		animation: fadein 3s ease;
 		animation-delay: 1s;
 		animation-fill-mode: forwards;
+
+		@media (min-width: $grid-float-breakpoint) {
+			font-size: 2.4rem;
+		}
 	}
 }
 
@@ -177,9 +217,14 @@ h1{
 		position: relative;
 		z-index: 1;
 		fill: lighten($brand-primary, 15%);
-		width: 4.8rem;
-		height: 4.8rem;
+		width: 4rem;
+		height: 4rem;
 		transition: all 500ms ease;
+
+		@media (min-width: $grid-float-breakpoint) {
+			width: 4.8rem;
+			height: 4.8rem;
+		}
 	}
 
 	.hover-bg{
