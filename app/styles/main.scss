@@ -33,22 +33,21 @@ section{
 h1{
 	position: absolute;
 	top: 25%;
-	// Acts weird with animation
-	// transform: translateY(-50%);
 	font-family: $font-family-sans-serif;
-	font-size: 2.12vw;
+	font-size: 3.6rem;
 	color: #FFF;
+	opacity: 0;
 	animation: fadein 3s ease;
-	// transform-origin: left top;
+	animation-fill-mode: forwards;
 
 	em{
 		font-style: normal;
 		font-family: $font-family-serif;
-		font-size: 4vw;
+		font-size: 6rem;
 	}
 
 	small{
-		font-size: 2.12vw;
+		font-size: 3.6rem;
 		display: block;
 		line-height: 2;
 		font-family: $font-family-sans-serif;
@@ -58,20 +57,20 @@ h1{
 
 .hover-effect{
 	font-weight: 600;
-	color: inherit;
+	color: lighten($brand-primary, 15%);
 	outline: none;
 	text-decoration: none;
 	position: relative;
 	display: inline-block;
-	overflow: hidden;
-	line-height: 1;
-	vertical-align: text-bottom;
+	// overflow: hidden;
+	// line-height: 1;
+	// vertical-align: text-bottom;
 
 	&:hover,
 	&:active,
 	&:focus{
 		text-decoration: none;
-		color: inherit;
+		color: lighten($brand-primary, 15%);
 	}
 
 	// &::after {
@@ -97,7 +96,7 @@ h1{
 		position: absolute;
 		z-index: 2;
 		overflow: hidden;
-		color: #FFF;
+		color: $brand-primary;
 		white-space: nowrap;
 		width: 0%;
 		transition: width 0.2s 0.15s;
@@ -122,8 +121,8 @@ h1{
 .half-lower {
 	z-index: 1;
 	height: 35vh;
-	background: $brand-primary;
-	color: rgba(#FFF, .75);
+	background: #F6F6F6;
+	color: lighten($text-color, 15%);
 	padding-top: 30px;
 
 	&::before,
@@ -140,40 +139,75 @@ h1{
 
 	&::before{
 		height: 50%;
-		background: rgba(darken($brand-primary, 15%), .75);
+		background: linear-gradient(270deg, #a63636, #216464);
+		background-size: 400% 400%;
 		transform: rotate(-3deg);
 		transform-origin: 3% 0;
-		animation: waves 10s ease-in-out alternate infinite;
-		// box-shadow: 0 -5px 10px rgba(darken($brand-primary, 25%), .5);
+		animation: waves 10s ease-in-out alternate infinite, gradient_wave 30s ease infinite;
 	}
 
 	&::after{
 		animation: waves2 12s ease-in-out alternate infinite;
-		// box-shadow: 0 -15px 20px rgba(darken($brand-primary, 25%), .5);
 	}
 
 	p{
-		font-size: 2.12vw;
+		font-size: 2.4rem;
 		max-width: 800px;
+		opacity: 0;
 		animation: fadein 3s ease;
+		animation-delay: 1s;
+		animation-fill-mode: forwards;
 	}
 }
 
 .socials{
+	opacity: 0;
 	margin-top: 30px;
+	animation: fadein 3s ease;
+	animation-delay: 2s;
+	animation-fill-mode: forwards;
 
-	svg{
-		fill: darken($brand-primary, 15%);
+	a{
+		position: relative;
+		display: block;
+		font-size: 0;
+	}
+
+	.icon-social{
+		position: relative;
+		z-index: 1;
+		fill: lighten($brand-primary, 15%);
 		width: 4.8rem;
 		height: 4.8rem;
-		transition: fill 300ms ease;
+		transition: all 500ms ease;
+	}
+
+	.hover-bg{
+		position: absolute;
+		top: .1rem;
+		right: .1rem;
+		bottom: .1rem;
+		left: .1rem;
+		border-radius: 50%;
+		transform-origin: center;
+		transform: scale(0);
+		opacity: 0;
+		background-color: $brand-primary;
+		transition: all 500ms ease;
+		z-index: 0;
 	}
 
 	a {
 
-		&:hover svg{
-			fill: rgba(#FFF, .75);
-			transform: rotate(5deg);
+		&:hover {
+			.icon-social{
+				fill: #F6F6F6;
+			}
+
+			.hover-bg{
+				opacity: 1;
+				transform: scale(1);
+			}
 		}
 	}
 }

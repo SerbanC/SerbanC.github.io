@@ -21,9 +21,13 @@ Hover Effect: Mary Lou
 Site: http://tympanus.net/codrops/2015/05/13/inspiration-for-text-styles-and-hover-effects/
 
 
+/* TOOLS */
+Gradient animation: http://www.gradient-animator.com/
+
+
 /* SITE */
 
 Last update: 2015/05/29
 Standards: HTML5, CSS3, JQ 2.1.4
-Components: Modernizr, jQuery, Bootstrap, SASS, Google Fonts, Icomoon
-Software: Sublime Text 3, SourceTree
+Components: Modernizr, jQuery, Bootstrap, SASS, Google Fonts
+Software: Sublime Text 3, SourceTree, Google Chrome
