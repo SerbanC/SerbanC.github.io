@@ -3,17 +3,21 @@
 // --------------------------------------------------
 
 
-//== Colors
-//
+// Colors
 
-$brand-primary:         #A63636;
-$brand-secondary:       #216464;
+$brand-primary: #A63636;
+$brand-secondary: #216464;
+$text-color: #666;
 
 
-//== Typography
-//
+// Typography
 
-$font-family-sans-serif:  'Josefin Sans', sans-serif;
-$font-family-serif:       'Cardo', serif;
+$font-family-sans-serif: 'Josefin Sans', sans-serif;
+$font-family-serif: 'Cardo', serif;
 
-$font-size-base:          62.5%;
+$font-size-base: 62.5%;
+
+
+// Grid
+
+$grid-float-breakpoint: 768px;
