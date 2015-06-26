@@ -1,13 +1,14 @@
 /* jshint devel:true */
 
 document.addEventListener('DOMContentLoaded',function(){
+	'use strict';
 	var container = document.getElementsByClassName('half-upper')[0];
-	var pattern = Trianglify({
+	var pattern = new Trianglify({
 		width: window.innerWidth,
 		height: window.innerHeight,
 		x_colors: ['#216464', '#A63636']
 	});
-	container.appendChild(pattern.canvas())
+	container.appendChild(pattern.canvas());
 
 	var shine1 = new Shine(document.getElementsByClassName('js-shine')[0]);
 	var shine2 = new Shine(document.getElementsByClassName('js-shine')[1]);
@@ -30,5 +31,4 @@ document.addEventListener('DOMContentLoaded',function(){
 	shine3.light.position.x = window.innerWidth / 2;
 	shine3.light.position.y = window.innerHeight / 4;
 	shine3.draw();
-})
-
+});
