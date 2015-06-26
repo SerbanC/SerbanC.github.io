@@ -5,6 +5,7 @@ $icon-font-path: '../fonts/';
 
 @import "_custom-variables.scss";
 @import "_animations.scss";
+@import "coverr.scss";
 
 * {
 	box-sizing: border-box;
@@ -38,17 +39,21 @@ section{
 }
 
 h1{
+	position: relative;
+	z-index: 2;
 	font-size: 2.4rem;
 	font-family: $font-family-sans-serif;
 	color: #FFF;
 	opacity: 0;
-	animation: fadein 3s ease;
+	animation: fadein 1.5s ease;
 	animation-fill-mode: forwards;
 
 	@media (min-width: $grid-float-breakpoint) {
 		position: absolute;
-		top: 25%;
+		top: 40%;
+		left: 50%;
 		font-size: 3.6rem;
+		transform: translate(-50%, -50%);
 	}
 
 	em{
@@ -110,6 +115,7 @@ h1{
 .half-upper,
 .half-lower{
 	padding: 5rem 3rem;
+	text-align: center;
 
 	@media (min-width: $grid-float-breakpoint) {
 		padding: 0 6rem;
@@ -155,6 +161,7 @@ h1{
 		transform: rotate(-3deg);
 		transform-origin: 3% 0;
 		animation: waves 10s ease-in-out alternate infinite, gradient_wave 30s ease infinite;
+		opacity: 0.5;
 
 		@media (min-width: $grid-float-breakpoint) {
 			animation: waves_screen 10s ease-in-out alternate infinite, gradient_wave 30s ease infinite;
@@ -172,10 +179,9 @@ h1{
 	p{
 		font-size: 2rem;
 		line-height: 1.5;
-		max-width: 800px;
+		// max-width: 800px;
 		opacity: 0;
-		animation: fadein 3s ease;
-		animation-delay: 1s;
+		animation: fadein 1.5s ease;
 		animation-fill-mode: forwards;
 
 		@media (min-width: $grid-float-breakpoint) {
@@ -206,8 +212,8 @@ h1{
 .socials{
 	opacity: 0;
 	margin-top: 30px;
-	animation: fadein 3s ease;
-	animation-delay: 2s;
+	animation: fadein 2s ease;
+	animation-delay: 1s;
 	animation-fill-mode: forwards;
 
 	a{
@@ -258,4 +264,13 @@ h1{
 			}
 		}
 	}
+}
+
+canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 110%;
+	opacity: 0.75;
 }

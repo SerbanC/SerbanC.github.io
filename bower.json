@@ -1,6 +1,8 @@
 {
-	"name": "serbancarjan.ro",
-	"private": true,
-	"dependencies": {
-	}
+  "name": "serbancarjan.ro",
+  "private": true,
+  "dependencies": {
+    "trianglify": "~0.2.1",
+    "shine": "~0.2.8"
+  }
 }
