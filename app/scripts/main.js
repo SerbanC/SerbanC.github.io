@@ -1,9 +1,11 @@
 /* jshint devel:true */
+/* globals Trianglify, Shine */
 
 document.addEventListener('DOMContentLoaded',function(){
 	'use strict';
 	var container = document.getElementsByClassName('half-upper')[0];
 	var pattern = new Trianglify({
+		/* jshint camelcase: false */
 		width: window.innerWidth,
 		height: window.innerHeight,
 		x_colors: ['#216464', '#A63636']
