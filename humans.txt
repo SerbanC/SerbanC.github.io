@@ -1,5 +1,6 @@
 /* TEAM */
 
+Version: aratgren-cragchest
 Author: Serban Carjan
 Site: serban.carjan+dotro [at] gmail.com
 Twitter: @SerbanCarjan
@@ -20,15 +21,24 @@ Site: http://tympanus.net/codrops/2013/10/03/a-collection-of-separator-styles/
 Hover Effect: Mary Lou
 Site: http://tympanus.net/codrops/2015/05/13/inspiration-for-text-styles-and-hover-effects/
 
+Trianglify: Quinn Rohlf
+Site: https://github.com/qrohlf/trianglify
+
+Coverr: CodersClan & Veed.Me
+Site: http://www.coverr.co/
+
+Shine: Benjamin Bojko
+Site: https://github.com/bigspaceship/shine.js
 
 /* TOOLS */
 Gradient animation: http://www.gradient-animator.com/
 Favicons: http://realfavicongenerator.net/
+Dwarf name generator for Git version names: http://fantasynamegenerators.com/dwarf_names.php
 
 
 /* SITE */
 
-Last update: 2015/06/5
+Last update: 2015/06/26
 Standards: HTML5, CSS3, JQ 2.1.4
 Components: Modernizr, jQuery, Bootstrap, SASS, Google Fonts
 Software: Sublime Text 3, SourceTree, Google Chrome
