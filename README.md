@@ -13,4 +13,4 @@ For now I removed all JS libraries, plugins and modules, there was no need for J
 * ~~get rid of Bootstrap;~~
 * maybe streamline the gulpfile to clean all the unused stuff, learn more Gulp than just running tasks in the process;
 * add a photo? perhaps.
-* replace the top pattern .png with a repeating `<canvas>` or svg?
+* ~~replace the top pattern .png with a repeating `<canvas>` or svg?~~
